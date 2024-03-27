@@ -26,13 +26,13 @@ namespace ConsoleApp1
 
             Console.WriteLine("Enter three numbers:");
 
-            Console.Write("Number 1: ");
+            Console.WriteLine("Number 1: ");
             int num1 = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Number 2: ");
+            Console.WriteLine("Number 2: ");
             int num2 = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Number 3: ");
+            Console.WriteLine("Number 3: ");
             int num3 = Convert.ToInt32(Console.ReadLine());
             int greatest = num1;
             if (num2 > greatest)
@@ -72,6 +72,32 @@ namespace ConsoleApp1
                     Console.WriteLine("The entered alphabet is not a vowel.");
                     break;
             }
+
+            //Task 2
+
+            //1. find the sum of the first n natural numbers
+
+            Console.WriteLine("Enter the natural Numbers");
+            int number = Convert.ToInt32(Console.ReadLine());
+            int Sum = 0;
+            for (int i = 1; i <= number; i++)
+            {
+                Sum = Sum + i;
+            }
+            Console.WriteLine(Sum);
+
+            //3.print the multiplication table of a given number using do....while
+
+            Console.WriteLine("Enter the number for multiplication table");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int j = 1;
+            do
+            {
+                Console.WriteLine($"{num}*{j} = {num * j}");
+                j++;
+            }
+            while (j <= 12);
+
             Console.ReadLine();
         }
     }
