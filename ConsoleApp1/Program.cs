@@ -77,26 +77,15 @@ namespace ConsoleApp1
 
             //1. find the sum of the first n natural numbers
 
-            Console.WriteLine("Enter the natural Numbers");
-            int number = Convert.ToInt32(Console.ReadLine());
-            int Sum = 0;
-            for (int i = 1; i <= number; i++)
-            {
-                Sum = Sum + i;
-            }
-            Console.WriteLine(Sum);
+            Class1.NaturalNumbers();
+
+            //2. check given number is prime or not using while loop
+
+            Class1.PrimeOrNot();
 
             //3.print the multiplication table of a given number using do....while
 
-            Console.WriteLine("Enter the number for multiplication table");
-            int num = Convert.ToInt32(Console.ReadLine());
-            int j = 1;
-            do
-            {
-                Console.WriteLine($"{num}*{j} = {num * j}");
-                j++;
-            }
-            while (j <= 12);
+            Class1.MultiplicationTable();
 
             Console.ReadLine();
         }
