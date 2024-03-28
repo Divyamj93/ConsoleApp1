@@ -8,14 +8,21 @@ namespace ConsoleApp1
 {
     class Program
     {
-        public string reference(ref string message)
+        public void reference(ref string message)
         {
-            return message;
+            message = message.ToUpper();
+            Console.WriteLine("Value inside the show function " + message);
         }
 
-        public void SumOfDigits(int val1, int val2)
+        public void SumOfDigits(int val)
         {
-            Console.WriteLine("Sum of number is " + (val1 + val2));
+            string value = val.ToString();
+            int total = 0;
+            for(int s = 0; s < value.Length; s++)
+            {
+                total = total+ int.Parse(value[s].ToString());
+            }
+            Console.WriteLine("Sum of number is " + total);
         }
         static void Main(string[] args)
         {
@@ -100,18 +107,17 @@ namespace ConsoleApp1
 
             //1. Define a function which takes reference string variable as an argument and convert it to upper case
 
-            var name ="divya";
+            string name ="divya";
             Program program = new Program();
-            string message = program.reference(ref name);
-            message = message.ToUpper();
-            Console.WriteLine("Hello " + message);
+            Console.WriteLine("Value before calling the function " + name);
+            program.reference(ref name);
+            Console.WriteLine("Value after calling the function " + name);
 
             //2.Write a function to display sum of digits
 
-            int val1 = 5;
-            int val2 = 3;
+            int val = 5678;
             Program program1 = new Program();
-            program1.SumOfDigits(val1,val2);
+            program1.SumOfDigits(val);
 
             Console.ReadLine();
         }
