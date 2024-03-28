@@ -8,6 +8,15 @@ namespace ConsoleApp1
 {
     class Program
     {
+        public string reference(string message)
+        {
+            return message;
+        }
+
+        public void SumOfDigits(int val1, int val2)
+        {
+            Console.WriteLine("Sum of number is " + (val1 + val2));
+        }
         static void Main(string[] args)
         {
             //task
@@ -86,6 +95,22 @@ namespace ConsoleApp1
             //3.print the multiplication table of a given number using do....while
 
             Class1.MultiplicationTable();
+
+            // Task 3
+
+            //1. Define a function which takes reference string variable as an argument and convert it to upper case
+
+            Program program = new Program();
+            string message = program.reference("Divya");
+            message = message.ToUpper();
+            Console.WriteLine("Hello " + message);
+
+            //2.Write a function to display sum of digits
+
+            int val1 = 5;
+            int val2 = 3;
+            Program program1 = new Program();
+            program1.SumOfDigits(val1,val2);
 
             Console.ReadLine();
         }
