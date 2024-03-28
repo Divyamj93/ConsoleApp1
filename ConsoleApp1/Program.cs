@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     class Program
     {
-        public string reference(string message)
+        public string reference(ref string message)
         {
             return message;
         }
@@ -100,8 +100,9 @@ namespace ConsoleApp1
 
             //1. Define a function which takes reference string variable as an argument and convert it to upper case
 
+            var name ="divya";
             Program program = new Program();
-            string message = program.reference("Divya");
+            string message = program.reference(ref name);
             message = message.ToUpper();
             Console.WriteLine("Hello " + message);
 
