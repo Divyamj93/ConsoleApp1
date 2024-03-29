@@ -119,6 +119,65 @@ namespace ConsoleApp1
             Program program1 = new Program();
             program1.SumOfDigits(val);
 
+            // Task 4
+
+            //1.Program to count the number of positive integers and negative integers in an array
+
+            Console.WriteLine("Enter the size of the array:");
+            int count = int.Parse(Console.ReadLine());
+            int[] array = new int[count];
+            Console.WriteLine("Enter the array values:");
+            for (int i = 0; i < count; i++)
+            {
+                array[i] = int.Parse(Console.ReadLine());
+            }
+            int positiveCount = Class2.CountPositiveIntegers(array);
+            int negativeCount = Class2.CountNegativeIntegers(array);
+
+            Console.WriteLine($"Number of positive integers: {positiveCount}");
+            Console.WriteLine($"Number of negative integers: {negativeCount}");
+
+            //2.Search vowels from a given character array
+
+            char[] vowels = { 'a', 'b', 'c', 'd', 'e', 'f', 'i', 'l' };
+            Class2.SearchVowels(vowels);
+
+            // 3.Write a program, which reads two arrays from the console and checks whether they are equal
+
+            Console.WriteLine("\nEnter the size of the arrays:");
+            int size = int.Parse(Console.ReadLine());
+            int[] a = new int[size];
+            int[] b = new int[size];
+            Console.WriteLine("Enter the first array:");
+            for (int i = 0; i < size; i++)
+            {
+                a[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Enter the second array:");
+            for (int i = 0; i < size; i++)
+            {
+                b[i] = int.Parse(Console.ReadLine());
+            }
+            bool equal = Class2.EqualArray(a, b);
+            if (equal)
+            {
+                Console.WriteLine("equal");
+            }
+            else
+            {
+                Console.WriteLine("Not equal");
+            }
+
+            //4. Sorting an array means to arrange its elements in an increasing (or decreasing) order
+
+            int[] arr = { 8, 2, 4, 9, 3, 5, 1 };
+            Array.Sort(arr);
+            Console.WriteLine("Array sorting in asc order");
+            Class2.PrintArray(arr);
+            Array.Reverse(arr);
+            Console.WriteLine("\nArray sorting in desc order");
+            Class2.PrintArray(arr);
+
             Console.ReadLine();
         }
     }
