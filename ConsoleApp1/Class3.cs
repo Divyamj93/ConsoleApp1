@@ -40,5 +40,28 @@ namespace ConsoleApp1
         }
         //2.Find the unique characters in a string(This can be done using HashSet class from Collection)
         //3.Pgm to count the number of words in a sentance.
+
+        public static int CountWords(string sentence)
+        {
+            int wordCount = 0;
+            bool word = false;
+            foreach(char count in sentence)
+            {
+                if (!char.IsWhiteSpace(count))
+                {
+                    word = true;
+                }
+                else
+                {
+                    wordCount++;
+                    word = false;
+                }
+            }
+            if (word)
+            {
+                wordCount++;
+            }
+            return wordCount;
+        }
     }
 }

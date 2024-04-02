@@ -193,6 +193,12 @@ namespace ConsoleApp1
                 Console.WriteLine("string is not palindrome");
             }
 
+            //3.Pgm to count the number of words in a sentance
+
+            string sentence = "Hai, Welcome to dotnet lets enjoy";
+            int wordCount = Class3.CountWords(sentence);
+            Console.WriteLine(wordCount);
+
             Console.ReadLine();
         }
     }
