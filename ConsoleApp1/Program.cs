@@ -178,6 +178,21 @@ namespace ConsoleApp1
             Console.WriteLine("\nArray sorting in desc order");
             Class2.PrintArray(arr);
 
+            //Task 5 
+
+            //1.Check whether a string is palindrome or not 
+
+            string value = "radar,level,madam,amma,appa";
+            bool Palindrome = Class3.Ispalindrome(value);
+            if (Palindrome)
+            {
+                Console.WriteLine("string is palindrome");
+            }
+            else
+            {
+                Console.WriteLine("string is not palindrome");
+            }
+
             Console.ReadLine();
         }
     }
