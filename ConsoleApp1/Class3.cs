@@ -38,7 +38,6 @@ namespace ConsoleApp1
             }
             return true;
         }
-        //2.Find the unique characters in a string(This can be done using HashSet class from Collection)
         //3.Pgm to count the number of words in a sentance.
 
         public static int CountWords(string sentence)

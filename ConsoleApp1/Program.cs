@@ -193,6 +193,24 @@ namespace ConsoleApp1
                 Console.WriteLine("\nstring is not palindrome");
             }
 
+            //2.Find the unique characters in a string(This can be done using HashSet class from Collection)
+
+            string s1 = "Hello unique character string";
+            HashSet<char> uniqueChars = new HashSet<char>();
+            char[] ch = s1.ToCharArray();
+            foreach (char c in ch)
+            {
+                if (!uniqueChars.Contains(c))
+                {
+                    uniqueChars.Add(c);
+                }
+                
+            }
+            foreach(char c in uniqueChars)
+            {
+                Console.WriteLine(c);
+            }
+
             //3.Pgm to count the number of words in a sentance
 
             string sentence = "\nHai, Welcome to dotnet lets enjoy";
