@@ -186,16 +186,16 @@ namespace ConsoleApp1
             bool Palindrome = Class3.Ispalindrome(value);
             if (Palindrome)
             {
-                Console.WriteLine("string is palindrome");
+                Console.WriteLine("\nstring is palindrome");
             }
             else
             {
-                Console.WriteLine("string is not palindrome");
+                Console.WriteLine("\nstring is not palindrome");
             }
 
             //3.Pgm to count the number of words in a sentance
 
-            string sentence = "Hai, Welcome to dotnet lets enjoy";
+            string sentence = "\nHai, Welcome to dotnet lets enjoy";
             int wordCount = Class3.CountWords(sentence);
             Console.WriteLine(wordCount);
 
