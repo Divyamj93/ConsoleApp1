@@ -6,7 +6,30 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Program
+    //class Employee with fields id,name,email,department
+    public class Employee
+    {
+        private int id;
+        private string name;
+        private string email;
+        private string department;
+
+        //the fields using private modifier and define getter and setter methods
+        public int Id { get => id; set => id = value; }
+        public string Name { get => name; set => name = value; }
+        public string Email { get => email; set => email = value; }
+        public string Department { get => department; set => department = value; }
+
+        //constructor and create object of employee
+        public Employee(int id, string name, string email, string department)
+        {
+            this.id = id;
+            this.name = name;
+            this.email = email;
+            this.department = department;
+        }
+    }
+    public class Program
     {
         public void reference(ref string message)
         {
@@ -24,7 +47,7 @@ namespace ConsoleApp1
             }
             Console.WriteLine("Sum of number is " + total);
         }
-        static void Main(string[] args)
+      public static void Main(string[] args)
         {
             //task
 
@@ -217,6 +240,15 @@ namespace ConsoleApp1
             int wordCount = Class3.CountWords(sentence);
             Console.WriteLine(wordCount);
 
+            //Task 6
+
+           // Define a class Employee with fields id,name,email,department
+
+            Employee emp = new Employee(25, "Divya", "divyamj@xminds.com", "CSE");
+            Console.WriteLine("Employee Id : " + emp.Id);
+            Console.WriteLine("Employee Name : " + emp.Name);
+            Console.WriteLine("Employee Email : " + emp.Email);
+            Console.WriteLine("Employee Department : " + emp.Department);
             Console.ReadLine();
         }
     }
