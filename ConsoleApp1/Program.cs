@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Members;
+using Task7a;
+using Task7b;
+using Task7c;
 
 namespace ConsoleApp1
 {
@@ -250,6 +253,24 @@ namespace ConsoleApp1
             Console.WriteLine("Employee Name : " + emp.Name);
             Console.WriteLine("Employee Email : " + emp.Email);
             Console.WriteLine("Employee Department : " + emp.Department);
+
+            //Task 7
+
+            //7a.Define a class Person with some fields and method display and show
+
+            Person person = new Person("Manju",20,"Trivandrum","Female");
+            person.Display();
+
+            //7b.Define display method as virtual method and override it inside Employee
+
+            Employee1 emp1 = new Employee1("Saranya", 25, "Kollam", "Female", "Chinakada", "Kerala");
+            emp1.Display();
+
+            //7c.Reimplement show method using new keyword inside Employee
+
+            Employee2 emp2 = new Employee2("Raj", 20, "Trivandrum", "Female", "eedede", "Kerala");
+            emp2.Display();
+
             Console.ReadLine();
         }
     }
