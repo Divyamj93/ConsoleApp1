@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Members;
 
 namespace ConsoleApp1
 {
@@ -242,8 +243,8 @@ namespace ConsoleApp1
 
             //Task 6
 
-           // Define a class Employee with fields id,name,email,department
-
+            // Define a class Employee with fields id,name,email,department
+            Class4.search();
             Employee emp = new Employee(25, "Divya", "divyamj@xminds.com", "CSE");
             Console.WriteLine("Employee Id : " + emp.Id);
             Console.WriteLine("Employee Name : " + emp.Name);

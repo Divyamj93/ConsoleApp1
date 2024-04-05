@@ -9,7 +9,7 @@ namespace Members
 {
     public class Class4
     {
-       public void search()
+       public static void search()
         {
             Employee emp1 = new Employee(12, "Chinju", "chinju@gmail.com", "BE");
             Console.WriteLine("Employee Id : " + emp1.Id);
