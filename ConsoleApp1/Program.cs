@@ -7,6 +7,7 @@ using Members;
 using Task7a;
 using Task7b;
 using Task7c;
+using Abstract;
 
 namespace ConsoleApp1
 {
@@ -271,6 +272,21 @@ namespace ConsoleApp1
             Employee2 emp2 = new Employee2("Raj", 20, "Trivandrum", "Female", "eedede", "Kerala");
             emp2.Display();
 
+            //Task 8
+
+            SavingsAccount svc = new SavingsAccount("SBI2233098898988", "Anu", 20000);
+            svc.Deposit(5000);
+            svc.Withdraw(2000);
+            svc.AddInterest();
+            CurrentAccount cvc = new CurrentAccount("SBI22330988984563", "Anju", 30000,10000);
+            cvc.Deposit(8000);
+            cvc.Withdraw(2000);
+
+            Console.WriteLine("\nSavings Account Balance:");
+            svc.DisplayBalance();
+
+            Console.WriteLine("\nCurrent Account Balance:");
+            cvc.DisplayBalance();
             Console.ReadLine();
         }
     }
