@@ -287,6 +287,15 @@ namespace ConsoleApp1
 
             Console.WriteLine("\nCurrent Account Balance:");
             cvc.DisplayBalance();
+
+            //Task 9
+
+            Logger lg = new Logger();
+
+            lg.Log("Error occurred!");
+            lg.Log("ClassName", "MethodName", "Error occurred in method!");
+            lg.Log("ClassName", "Error occurred in class!");
+            lg.Log("ClassName", "MethodName", DateTime.Now, "Error occurred at specific time!");
             Console.ReadLine();
         }
     }
