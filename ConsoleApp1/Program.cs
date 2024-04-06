@@ -8,6 +8,7 @@ using Task7a;
 using Task7b;
 using Task7c;
 using Abstract;
+using Interfaces;
 
 namespace ConsoleApp1
 {
@@ -296,6 +297,20 @@ namespace ConsoleApp1
             lg.Log("ClassName", "MethodName", "Error occurred in method!");
             lg.Log("ClassName", "Error occurred in class!");
             lg.Log("ClassName", "MethodName", DateTime.Now, "Error occurred at specific time!");
+
+            //Task 10
+
+            MobileAuthenticationInterface mai;
+
+            mai= new FaceRecognitionAuthentication();
+            bool isFaceAuthenticated = mai.authenticate();
+            Console.WriteLine("Face Recognition Authentication Result: " + isFaceAuthenticated);
+            mai = new FingerPrintAuthentication();
+            bool isFingerAuthenticated = mai.authenticate();
+            Console.WriteLine("Finger Recognition Authentication Result: " + isFingerAuthenticated);
+            mai = new PasswordAuthentication();
+            bool isPasswordAuthenticated = mai.authenticate();
+            Console.WriteLine("Password Recognition Authentication Result: " + isPasswordAuthenticated);
             Console.ReadLine();
         }
     }
