@@ -311,6 +311,36 @@ namespace ConsoleApp1
             mai = new PasswordAuthentication();
             bool isPasswordAuthenticated = mai.authenticate();
             Console.WriteLine("Password Recognition Authentication Result: " + isPasswordAuthenticated);
+
+            //Task 11
+
+            // Write a program which will take as input two numbers and display the quotient as o / p
+            // by handling the division by zero exception and number format exceptiontry{
+            try
+            {
+                Console.WriteLine("Enter the first number");
+                string n1 = Console.ReadLine();
+                double number1 = double.Parse(n1);
+                Console.WriteLine("Enter the second number");
+                string n2 = Console.ReadLine();
+                double number2 = double.Parse(n2);
+
+                if (number2 == 0)
+                {
+                    throw new DivideByZeroException("Cannot divide by zero");
+                }
+                double quotient = number1 / number2;
+                Console.WriteLine("Quotient: " + quotient);
+            }catch(FormatException e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+            }catch(DivideByZeroException e)
+            {
+                Console.WriteLine("Error : " + e.Message);
+            }catch(Exception e)
+            {
+                Console.WriteLine("An error occurred: " + e.Message);
+            }
             Console.ReadLine();
         }
     }
