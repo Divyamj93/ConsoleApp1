@@ -9,6 +9,7 @@ using Task7b;
 using Task7c;
 using Abstract;
 using Interfaces;
+using Form;
 
 namespace ConsoleApp1
 {
@@ -331,15 +332,32 @@ namespace ConsoleApp1
                 }
                 double quotient = number1 / number2;
                 Console.WriteLine("Quotient: " + quotient);
-            }catch(FormatException e)
+            }
+            catch (FormatException e)
             {
                 Console.WriteLine("Error : " + e.Message);
-            }catch(DivideByZeroException e)
+            }
+            catch (DivideByZeroException e)
             {
                 Console.WriteLine("Error : " + e.Message);
-            }catch(Exception e)
+            }
+            catch (Exception e)
             {
                 Console.WriteLine("An error occurred: " + e.Message);
+            }
+
+            //Task 12
+
+            // Create object of class user.If any of the fields are not valid a custom exception InvalidDataException should be thrown.
+
+            try
+            {
+                User user = new User(1, "Divya", "divya@gmail.com", "9837677623");
+                Console.WriteLine("User created successfully");
+            }
+            catch (InvalidDataException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
             }
             Console.ReadLine();
         }
