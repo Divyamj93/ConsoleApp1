@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -388,6 +389,76 @@ namespace ConsoleApp1
                 User1 user = userQueue.Dequeue();
                 Console.WriteLine(user.ToString());
             }
+
+            // Task 14
+
+            // Create a Dictionary which contains book and author as key value pair
+
+            //Dictionary<string, Dictionary> bookDictionary = new Dictionary<string, Dictionary>();
+            //bookDictionary.Add("Dictionary1", new Dictionary("Author1", "Book1"));
+            //bookDictionary.Add("Dictionary2", new Dictionary("Author2", "Book2"));
+            //bookDictionary.Add("Dictionary3", new Dictionary("Author3", "Book3"));
+
+            //Task 15
+
+            //Create a HashTable with country and capital as key value pair
+
+            Hashtable hashvalue = new Hashtable();
+            hashvalue.Add("Afghanistan", "Kabul");
+            hashvalue.Add("Albania", "Tirana");
+            hashvalue.Add("Algeria", "Algiers");
+            hashvalue.Add("Andorra", "Andorra la Vella");
+
+            string check = "Algeria";
+            if (hashvalue.ContainsKey(check))
+            {
+                Console.WriteLine($"{check} country is available in this hash");
+            }
+            else
+            {
+                Console.WriteLine($"{check} is not available");
+            }
+            string check1 = "Tirana";
+
+            if (hashvalue.ContainsKey(check1))
+            {
+                Console.WriteLine($"{check1} capital is available in this hash");
+            }
+            else
+            {
+                Console.WriteLine($"{check1} is not available");
+            }
+            string remove = "Albania";
+
+            if (hashvalue.ContainsKey(remove))
+            {
+                hashvalue.Remove(remove);
+                Console.WriteLine($"{remove} is removed from hash");
+            }
+            else
+            {
+                Console.WriteLine("not removed");
+            }
+
+            string update = "Algiers";
+
+            if (hashvalue.ContainsKey(update))
+            {
+                hashvalue[update] = "Kabul (Updated)";
+                Console.WriteLine("Capital can be updated");
+            }
+            else
+            {
+                Console.WriteLine("capital not updated");
+            }
+            foreach (DictionaryEntry entry in hashvalue)
+            {
+                Console.WriteLine($"{entry.Key}: {entry.Value}");
+            }
+
+            //Task 16
+
+            //
             Console.ReadLine();
         }
     }
