@@ -394,10 +394,37 @@ namespace ConsoleApp1
 
             // Create a Dictionary which contains book and author as key value pair
 
-            //Dictionary<string, Dictionary> bookDictionary = new Dictionary<string, Dictionary>();
-            //bookDictionary.Add("Dictionary1", new Dictionary("Author1", "Book1"));
-            //bookDictionary.Add("Dictionary2", new Dictionary("Author2", "Book2"));
-            //bookDictionary.Add("Dictionary3", new Dictionary("Author3", "Book3"));
+            Dictionary<string, string> bookDictionary = new Dictionary<string, string>();
+            bookDictionary.Add("Author1", "Book1");
+            bookDictionary.Add("Author2", "Book2");
+            bookDictionary.Add("Author3", "Book3");
+            foreach (var pair in bookDictionary)
+            {
+                Console.WriteLine($"Book: {pair.Value}, Author: {pair.Key}");
+            }
+            string book = "Book2";
+            string author = "Author1";
+
+            if (bookDictionary.ContainsValue(book))
+            {
+                Console.WriteLine($"The dictionary contains the {book}");
+            }
+            else
+            {
+                Console.WriteLine($"This dictionary not having the {book}");
+            }
+            if (bookDictionary.ContainsKey(author))
+            {
+                Console.WriteLine($"The dictionary contains the {author}");
+            }
+            else
+            {
+                Console.WriteLine($"This dictionary not having the {author}");
+            }
+            Parallel.ForEach(bookDictionary, pair =>
+            {
+                Console.WriteLine($"Book: {pair.Value}, Author: {pair.Key}");
+            });
 
             //Task 15
 
@@ -420,7 +447,7 @@ namespace ConsoleApp1
             }
             string check1 = "Tirana";
 
-            if (hashvalue.ContainsKey(check1))
+            if (hashvalue.ContainsValue(check1))
             {
                 Console.WriteLine($"{check1} capital is available in this hash");
             }
