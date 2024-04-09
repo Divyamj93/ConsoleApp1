@@ -359,6 +359,35 @@ namespace ConsoleApp1
             {
                 Console.WriteLine($"Error: {ex.Message}");
             }
+
+            //Task 13
+
+            //ArrayList Assignment
+            List<User1> users = new List<User1>();
+
+            // Create user objects and add them to the list
+
+            users.Add(new User1(1, "Raki"));
+            users.Add(new User1(2, "Manju"));
+            users.Add(new User1(3, "Chinju"));
+
+            // Display properties of each user
+            foreach (User1 user in users)
+            {
+                Console.WriteLine(user.ToString());
+            }
+            //Create a Queue and add objects of user
+
+            Queue<User1> userQueue = new Queue<User1>();
+            userQueue.Enqueue(new User1(1, "Dinesh"));
+            userQueue.Enqueue(new User1(2, "Deepak"));
+            userQueue.Enqueue(new User1(3, "Divya"));
+
+            while (userQueue.Count > 0)
+            {
+                User1 user = userQueue.Dequeue();
+                Console.WriteLine(user.ToString());
+            }
             Console.ReadLine();
         }
     }
