@@ -458,7 +458,26 @@ namespace ConsoleApp1
 
             //Task 16
 
-            //
+            // Create a stack and add some names to it.
+
+            Stack<string> nameStack = new Stack<string>();
+            nameStack.Push("dinesh");
+            nameStack.Push("deepak");
+            nameStack.Push("divya");
+            Console.WriteLine("Stack elements after adding:");
+            foreach (var names in nameStack)
+            {
+                Console.WriteLine(names);
+            }
+            string topName = nameStack.Peek();
+            Console.WriteLine($"\nTop element of the stack (Peek): {topName}");
+
+            Console.WriteLine("\nPop elements from the stack:");
+            while (nameStack.Count > 0)
+            {
+                string poppedName = nameStack.Pop();
+                Console.WriteLine(poppedName);
+            }
             Console.ReadLine();
         }
     }
