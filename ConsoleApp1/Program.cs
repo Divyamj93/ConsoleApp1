@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Collections;
 using System.Linq;
@@ -506,6 +507,7 @@ namespace ConsoleApp1
                 Console.WriteLine(poppedName);
             }
             Console.ReadLine();
+
             //Task 17
 
             //1.Create a file test.txt add some content and save it
@@ -528,6 +530,29 @@ namespace ConsoleApp1
             }
 
             f1.Close();
+
+            //Task 19
+
+            //1.Create a file  write the user i/p data to the newly created file.
+
+            Console.WriteLine("\nEnter the user input");
+            string values = Console.ReadLine();
+            FileStream f2 = new FileStream("C:\\Users\\Xminds\\userText.txt", FileMode.Create);
+            StreamWriter sw = new StreamWriter(f2);
+            sw.WriteLine(values);
+            sw.Close();
+            f2.Close();
+            Console.WriteLine("User Input Created Successfully...");
+
+            //Task 20
+
+            //2.Using StreamReader read the content of a file and print it in the console.
+            FileStream f3 = new FileStream("C:\\Users\\Xminds\\userText.txt", FileMode.OpenOrCreate);
+            StreamReader sr = new StreamReader(f3);
+            string data = sr.ReadToEnd();
+            Console.WriteLine(data);
+            sr.Close();
+            f3.Close();
         }
     }
 }
