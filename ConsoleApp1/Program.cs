@@ -506,6 +506,28 @@ namespace ConsoleApp1
                 Console.WriteLine(poppedName);
             }
             Console.ReadLine();
+            //Task 17
+
+            //1.Create a file test.txt add some content and save it
+
+            FileStream f = new FileStream("C:\\Users\\Xminds\\text.txt", FileMode.Create);
+            byte[] bytes = System.Text.Encoding.UTF8.GetBytes("FileStream insert");
+            f.Write(bytes, 0, bytes.Length);
+            f.Close();
+            Console.WriteLine("Content created successfully...");
+
+            //Task 18
+
+            //2.Read the content of a file and display it in the console.
+
+            FileStream f1 = new FileStream("C:\\Users\\Xminds\\text.txt", FileMode.OpenOrCreate);
+            int n = 0;
+            while ((n = f1.ReadByte()) != -1)
+            {
+                Console.Write((char)n);
+            }
+
+            f1.Close();
         }
     }
 }
