@@ -555,9 +555,12 @@ namespace ConsoleApp1
             f3.Close();
             //Task 21
 
-            int[] numbers = { 9, 2, 6, 8, 15, 3, 7, 18, 4, 1 };
+            //Create an array containing 10 numbers.
+           // O / p the numbers divisible by 3 by writing query
 
-            var result = from number in numbers
+            int[] divisible = { 9, 2, 6, 8, 15, 3, 7, 18, 4, 1 };
+
+            var result = from number in divisible
                          where number % 3 == 0
                          select (number);
             foreach(var res in result)
