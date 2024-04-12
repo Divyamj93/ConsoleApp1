@@ -13,6 +13,7 @@ using Abstract;
 using Interfaces;
 using Form;
 using BankDets;
+using JoinExample;
 
 namespace ConsoleApp1
 {
@@ -638,6 +639,37 @@ namespace ConsoleApp1
                     }
                     Console.WriteLine();
             }
+
+            //Task 25
+
+            //create a customer class with id and name.Create Order class with id,productName,customerId.
+            //create list of customers and order.Display which customer has bought which product using join
+            List<Customer1> customer1 = new List<Customer1>
+            {
+                new Customer1(1,"John Doe"),
+                new Customer1(2,"Jane Smith")
+            };
+
+            List<Order> orders = new List<Order>
+            {
+                new Order(1, "Phone",1),
+                new Order(2, "laptop",2),
+                new Order(3, "cpu",2),
+                new Order(4, "mouse",1)
+            };
+
+            var customerOrders = from customer in customer1
+                                 join order in orders on customer.Id equals order.CustomerId
+                                 select new
+                                 {
+                                     CustomerName = customer.Name,
+                                     ProductName = order.ProductName
+                                 };
+            foreach(var cusOrder in customerOrders)
+            {
+                Console.WriteLine($"{cusOrder.CustomerName} has bought {cusOrder.ProductName}");
+            }
+
         }
     }
 }
