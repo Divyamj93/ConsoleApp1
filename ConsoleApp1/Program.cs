@@ -567,6 +567,19 @@ namespace ConsoleApp1
             {
                 Console.WriteLine(res);
             }
+            //Task 22
+
+            //Display the number of occurrence of a character in a given string
+
+            string stringList = "C# Tuttorials";
+
+            var stringResult = from c in stringList
+                               group c by c into g
+                               select g;
+            foreach (var res in stringResult)
+            {
+                Console.WriteLine($"'{res.Key}' - {res.Count()} times");
+            }
         }
     }
 }
