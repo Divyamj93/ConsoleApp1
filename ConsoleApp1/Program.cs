@@ -12,6 +12,7 @@ using Task7c;
 using Abstract;
 using Interfaces;
 using Form;
+using BankDets;
 
 namespace ConsoleApp1
 {
@@ -553,6 +554,7 @@ namespace ConsoleApp1
             Console.WriteLine(data);
             sr.Close();
             f3.Close();
+
             //Task 21
 
             //Create an array containing 10 numbers.
@@ -567,6 +569,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine(res);
             }
+
             //Task 22
 
             //Display the number of occurrence of a character in a given string
@@ -580,6 +583,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine($"'{res.Key}' - {res.Count()} times");
             }
+
             //Task 23
 
             //Create a collection of names and print it in ascending and descending order
@@ -604,6 +608,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine(desco);
             }
+
             //Task 24
 
             //Create a class Bank containing field nameofbank.Create customer class with name,balanace and bank name
@@ -611,27 +616,27 @@ namespace ConsoleApp1
 
             List<Customer> customers = new List<Customer>
             {
-                new Customer("John Doe", 1000000,new Bank("Bank A")),
+                new Customer("John Doe", 1000000,new Bank("Bank B")),
                 new Customer("Jane Smith", 400000,new Bank("Bank A")),
-                new Customer("Alice Johnson", 700000,new Bank("Bank A")),
+                new Customer("Alice Johnson", 700000,new Bank("Bank B")),
                 new Customer("Bob Brown", 600000,new Bank("Bank A")),
-                new Customer("David Lee", 800000,new Bank("Bank A")),
+                new Customer("David Lee", 800000,new Bank("Bank C")),
                 new Customer("Emma Wilson", 300000,new Bank("Bank A"))
             };
             var filteredCustomers = from customer in customers
                                     where customer.Balance > 500000
-                                    group customer by customer.Bank.Nameofbank into bankDet
+                                    group customer by customer.Bank.NameOfBank into bankDet
                                     orderby bankDet.Key
                                     select bankDet;
 
-            foreach (var group in filteredCustomers)
+            foreach (var bankDet in filteredCustomers)
             {
-                Console.WriteLine("Bank Name: " + group.Key);
-                foreach (var customer in group)
-                {
-                    Console.WriteLine("Customer Name: " + customer.Name + ", Balance: " + customer.Balance);
-                }
-                Console.WriteLine();
+                    Console.WriteLine("Bank Name: " + bankDet.Key);
+                    foreach (var customer in bankDet)
+                    {
+                        Console.WriteLine("Customer Name: " + customer.Name + ", Balance: " + customer.Balance);
+                    }
+                    Console.WriteLine();
             }
         }
     }
