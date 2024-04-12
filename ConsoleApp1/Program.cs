@@ -553,6 +553,17 @@ namespace ConsoleApp1
             Console.WriteLine(data);
             sr.Close();
             f3.Close();
+            //Task 21
+
+            int[] numbers = { 9, 2, 6, 8, 15, 3, 7, 18, 4, 1 };
+
+            var result = from number in numbers
+                         where number % 3 == 0
+                         select (number);
+            foreach(var res in result)
+            {
+                Console.WriteLine(res);
+            }
         }
     }
 }
