@@ -604,6 +604,35 @@ namespace ConsoleApp1
             {
                 Console.WriteLine(desco);
             }
+            //Task 24
+
+            //Create a class Bank containing field nameofbank.Create customer class with name,balanace and bank name
+            //Create a list of customers.Display the customers who have a balance greater than 5lakh Rs group by bank name
+
+            List<Customer> customers = new List<Customer>
+            {
+                new Customer("John Doe", 1000000,new Bank("Bank A")),
+                new Customer("Jane Smith", 400000,new Bank("Bank A")),
+                new Customer("Alice Johnson", 700000,new Bank("Bank A")),
+                new Customer("Bob Brown", 600000,new Bank("Bank A")),
+                new Customer("David Lee", 800000,new Bank("Bank A")),
+                new Customer("Emma Wilson", 300000,new Bank("Bank A"))
+            };
+            var filteredCustomers = from customer in customers
+                                    where customer.Balance > 500000
+                                    group customer by customer.Bank.Nameofbank into bankDet
+                                    orderby bankDet.Key
+                                    select bankDet;
+
+            foreach (var group in filteredCustomers)
+            {
+                Console.WriteLine("Bank Name: " + group.Key);
+                foreach (var customer in group)
+                {
+                    Console.WriteLine("Customer Name: " + customer.Name + ", Balance: " + customer.Balance);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
