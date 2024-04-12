@@ -580,6 +580,30 @@ namespace ConsoleApp1
             {
                 Console.WriteLine($"'{res.Key}' - {res.Count()} times");
             }
+            //Task 23
+
+            //Create a collection of names and print it in ascending and descending order
+
+            List<string> nameList = new List<string>()
+            {
+                "raj","ram","chinju","divya","chinnu"
+            };
+            var ascOrder = from ascName in nameList
+                           orderby ascName
+                           select (ascName);
+            Console.WriteLine("Ascending order Names : ");
+            foreach (var asco in ascOrder)
+            {
+                Console.WriteLine(asco);
+            }
+            var descOrder = from descName in nameList
+                           orderby descName descending
+                           select (descName);
+            Console.WriteLine("Descending order Names : ");
+            foreach (var desco in descOrder)
+            {
+                Console.WriteLine(desco);
+            }
         }
     }
 }
