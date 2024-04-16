@@ -670,6 +670,37 @@ namespace ConsoleApp1
                 Console.WriteLine($"{cusOrder.CustomerName} has bought {cusOrder.ProductName}");
             }
 
+            //Task 26
+
+            //Define a method promoteList which will list the employes who are eligible for promotion
+
+            List<Employeee> employees = new List<Employeee>
+            {
+                new Employeee(1, "John", 50000, 6, "UST"),
+                new Employeee(2, "Alice", 60000, 4, "Infosys"),
+                new Employeee(3, "Bob", 55000, 8, "UST"),
+                new Employeee(4, "Emily", 65000, 2, "Infosys"),
+                new Employeee(5, "Maggie", 85000, 8, "Alliance"),
+                new Employeee(6, "Charlie", 68000, 6, "Alliance")
+            };
+            Console.WriteLine("Employee eligible for UST");
+            List<Employeee> ustEmployees = Employeee.PromotionList(employees, UST.Eligible, "UST");
+            foreach (Employeee empl in ustEmployees)
+            {
+                empl.EmployeeInfo();
+            }
+            Console.WriteLine("Employee eligible for Infosys");
+            List<Employeee> infosysEmployees = Employeee.PromotionList(employees, Infosys.Eligible, "Infosys");
+            foreach (Employeee empl in infosysEmployees)
+            {
+                empl.EmployeeInfo();
+            }
+            Console.WriteLine("Employee eligible for Alliance");
+            List<Employeee> alliance = Employeee.PromotionList(employees, Alliance.Eligible, "Alliance");
+            foreach (Employeee empl in alliance)
+            {
+                empl.EmployeeInfo();
+            }
         }
     }
 }
