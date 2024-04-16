@@ -36,12 +36,12 @@ namespace DelegatesSample
 
             foreach (Employeee emp in empList)
             {
-                //if (emp.Experience)
-                //{
+                if (criteria(emp))
+                {
                     eligibleEmployees.Add(emp);
-                //}
+                }
             }
-            return eligibleEmployees;
+                return eligibleEmployees;
         }
     }
 
