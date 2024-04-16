@@ -14,6 +14,7 @@ using Interfaces;
 using Form;
 using BankDets;
 using JoinExample;
+using DelegatesSample;
 
 namespace ConsoleApp1
 {
@@ -676,31 +677,36 @@ namespace ConsoleApp1
 
             List<Employeee> employees = new List<Employeee>
             {
-                new Employeee(1, "John", 50000, 6, "UST"),
-                new Employeee(2, "Alice", 60000, 4, "Infosys"),
-                new Employeee(3, "Bob", 55000, 8, "UST"),
-                new Employeee(4, "Emily", 65000, 2, "Infosys"),
-                new Employeee(5, "Maggie", 85000, 8, "Alliance"),
-                new Employeee(6, "Charlie", 68000, 6, "Alliance")
+                new Employeee(1, "John", 50000, 6),
+                new Employeee(2, "Alice", 60000, 4),
+                new Employeee(3, "Bob", 55000, 8),
+                new Employeee(4, "Emily", 65000, 2),
+                new Employeee(5, "Maggie", 85000, 8),
+                new Employeee(6, "Charlie", 68000, 6)
             };
             Console.WriteLine("Employee eligible for UST");
-            List<Employeee> ustEmployees = Employeee.PromotionList(employees, UST.Eligible, "UST");
+
+            PromotionCriteria promo = UST.IsEligibleforPomotion;
+            List<Employeee> ustEmployees = Employeee.PromotionList(employees, promo);
             foreach (Employeee empl in ustEmployees)
             {
                 empl.EmployeeInfo();
             }
             Console.WriteLine("Employee eligible for Infosys");
-            List<Employeee> infosysEmployees = Employeee.PromotionList(employees, Infosys.Eligible, "Infosys");
+            promo = Infosys.IsEligibleforPomotion;
+            List<Employeee> infosysEmployees = Employeee.PromotionList(employees, promo);
             foreach (Employeee empl in infosysEmployees)
             {
                 empl.EmployeeInfo();
             }
             Console.WriteLine("Employee eligible for Alliance");
-            List<Employeee> alliance = Employeee.PromotionList(employees, Alliance.Eligible, "Alliance");
+            promo = Alliance.IsEligibleforPomotion;
+            List<Employeee> alliance = Employeee.PromotionList(employees, promo);
             foreach (Employeee empl in alliance)
             {
                 empl.EmployeeInfo();
             }
+
         }
     }
 }
