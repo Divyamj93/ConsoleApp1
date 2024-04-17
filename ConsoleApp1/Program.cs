@@ -707,6 +707,23 @@ namespace ConsoleApp1
                 empl.EmployeeInfo();
             }
 
+            //Task 27
+
+            List<Emplyee> emplyees = new List<Emplyee>();
+
+            emplyees.Add(new Emplyee(1, "John", 50000));
+            emplyees.Add(new Emplyee(2, "Jan", 80000));
+            emplyees.Add(new Emplyee(3, "Cena", 20000));
+            emplyees.Add(new Emplyee(4, "Darling", 30000));
+            emplyees.Add(new Emplyee(5, "Johns", 40000));
+
+            Emplyee emp11 = emplyees[0];
+            emp11["Department"] = "HR";
+            emp11["Location"] = "New York";
+            emp11[0] = "Senior";
+            emp11[1] = "Manager";
+            emp11.Display();
+
         }
     }
 }
